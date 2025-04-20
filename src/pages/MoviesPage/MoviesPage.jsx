@@ -5,6 +5,7 @@ import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import SearchBar from "../../components/SearchBar/SearchBar";
+import { toast } from "react-hot-toast"; // Імпортуємо бібліотеку для сповіщень
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -34,6 +35,10 @@ const MoviesPage = () => {
   }, [query]);
 
   const handleSubmit = (value) => {
+    if (!value.trim()) {
+      toast.error("Please enter a search term!"); // Сповіщення про порожнє поле
+      return;
+    }
     setSearchParams({ query: value });
   };
 

@@ -6,13 +6,16 @@ import css from "./SearchBar.module.css";
 const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
 
-  const handleChange = (e) => setQuery(e.target.value.trimStart());
+  const handleChange = (e) => setQuery(e.target.value.trim());
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!query) return;
+    if (!query.trim()) {
+      alert("Please enter a search term!"); // Сповіщення, якщо поле пошуку порожнє
+      return;
+    }
     onSubmit(query);
-    setQuery("");
+    setQuery(""); // очищаємо поле після пошуку
   };
 
   return (

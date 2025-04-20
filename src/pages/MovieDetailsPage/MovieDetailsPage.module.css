@@ -1,16 +1,59 @@
 .backLink {
   display: inline-block;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
   text-decoration: none;
-  color: steelblue;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.backLink:hover {
+  background-color: #45a049;
 }
 
 .details {
   display: flex;
   gap: 20px;
-  margin-bottom: 20px;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.details img {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.details div {
+  max-width: 600px;
 }
 
 .additional {
+  border-top: 1px solid #ddd;
+  padding: 20px;
   margin-top: 20px;
+}
+
+.additional p {
+  font-weight: bold;
+}
+
+.additional ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.additional li a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.additional li a:hover {
+  color: #004ba0;
 }
