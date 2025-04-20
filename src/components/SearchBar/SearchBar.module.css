@@ -1,15 +1,44 @@
 .form {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px auto;
 }
 
 .input {
-  flex-grow: 1;
-  padding: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  width: 300px;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: steelblue;
+  outline: none;
 }
 
 .button {
-  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: steelblue;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: tomato;
+}
+
+.button svg {
+  width: 20px;
+  height: 20px;
 }

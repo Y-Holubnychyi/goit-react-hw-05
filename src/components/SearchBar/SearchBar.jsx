@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { FaSearch } from "react-icons/fa"; // Імпортуємо іконку пошуку
 import css from "./SearchBar.module.css";
 
 const SearchBar = ({ onSubmit }) => {
@@ -24,7 +25,7 @@ const SearchBar = ({ onSubmit }) => {
         className={css.input}
       />
       <button type="submit" className={css.button}>
-        Search
+        <FaSearch /> {/* Іконка пошуку */}
       </button>
     </form>
   );

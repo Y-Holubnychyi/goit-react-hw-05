@@ -1,13 +1,32 @@
 .nav {
   display: flex;
+  justify-content: center;
   gap: 20px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
 }
 
 .link {
-  color: black;
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid transparent;
+  border-radius: 8px;
   text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.link:hover {
+  border-color: steelblue;
+  color: steelblue;
+  background-color: #f0f8ff;
 }
 
 .active {
+  border-color: tomato;
   color: tomato;
+  background-color: #ffe5e0;
 }
