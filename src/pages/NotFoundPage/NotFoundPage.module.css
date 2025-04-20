@@ -1,0 +1,15 @@
+.wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: steelblue;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

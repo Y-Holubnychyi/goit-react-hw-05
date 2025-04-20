@@ -1,7 +1,7 @@
-import s from "./Loader.module.css";
+import styles from "./Loader.module.css";
 
-function Loader() {
-  return <div className={s.loader}></div>;
-}
+const Loader = () => {
+  return <div className={styles.loader}>Loading...</div>;
+};
 
 export default Loader;
