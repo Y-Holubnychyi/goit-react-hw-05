@@ -2,9 +2,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import Navigation from "./components/Navigation/Navigation";
 import Loader from "./components/Loader/Loader.jsx";
+import { Toaster } from "react-hot-toast";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
-
 const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
 const MovieDetailsPage = lazy(() =>
   import("./pages/MovieDetailsPage/MovieDetailsPage")
@@ -19,6 +19,7 @@ const App = () => {
   return (
     <div>
       <Navigation />
+      <Toaster position="top-right" />
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<HomePage />} />

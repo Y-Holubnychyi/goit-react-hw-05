@@ -12,20 +12,16 @@ const MovieList = ({ movies }) => {
         <li key={id} className={css.item}>
           <Link to={`/movies/${id}`} state={location} className={css.link}>
             <div className={css.imageWrapper}>
-              <img
-                src={
-                  poster_path
-                    ? `https://image.tmdb.org/t/p/w300${poster_path}`
-                    : ""
-                }
-                alt={title || name}
-                className={css.image}
-                onError={(e) => {
-                  e.target.style.display = "none";
-                }}
-              />
-
-              {!poster_path && (
+              {poster_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+                  alt={title || name}
+                  className={css.image}
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                  }}
+                />
+              ) : (
                 <div className={css.iconContainer}>
                   <MdMovie size={100} color="#ccc" />
                 </div>

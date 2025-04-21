@@ -1,21 +1,22 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { FaSearch } from "react-icons/fa"; // Імпортуємо іконку пошуку
+import { FaSearch } from "react-icons/fa";
+import { toast } from "react-hot-toast";
 import css from "./SearchBar.module.css";
 
 const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
 
-  const handleChange = (e) => setQuery(e.target.value.trim());
+  const handleChange = (e) => setQuery(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!query.trim()) {
-      alert("Please enter a search term!"); // Сповіщення, якщо поле пошуку порожнє
+      toast.error("Please enter a search term!");
       return;
     }
-    onSubmit(query);
-    setQuery(""); // очищаємо поле після пошуку
+    onSubmit(query.trim());
+    setQuery("");
   };
 
   return (
