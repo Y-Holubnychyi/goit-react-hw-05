@@ -2,7 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaSearch } from "react-icons/fa";
 import { toast } from "react-hot-toast";
-import css from "./SearchBar.module.css";
+import s from "./SearchBar.module.css";
 
 const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
@@ -20,16 +20,16 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={css.form}>
+    <form onSubmit={handleSubmit} className={s.form}>
       <input
         type="text"
         placeholder="Search movies..."
         value={query}
         onChange={handleChange}
-        className={css.input}
+        className={s.input}
       />
-      <button type="submit" className={css.button}>
-        <FaSearch /> {/* Іконка пошуку */}
+      <button type="submit" className={s.button}>
+        <FaSearch />
       </button>
     </form>
   );

@@ -5,7 +5,7 @@ import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import { toast } from "react-hot-toast"; // Імпортуємо бібліотеку для сповіщень
+import { toast } from "react-hot-toast";
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -15,13 +15,18 @@ const MoviesPage = () => {
   const query = searchParams.get("query") ?? "";
 
   useEffect(() => {
-    if (!query) return;
+    if (!query.trim()) return;
 
     const fetchData = async () => {
       try {
         setError(false);
         setLoading(true);
         const results = await searchMovies(query);
+
+        if (results.length === 0) {
+          toast.error("No movies found for the search term!");
+        }
+
         setMovies(results);
       } catch (error) {
         console.error(error);
@@ -36,7 +41,7 @@ const MoviesPage = () => {
 
   const handleSubmit = (value) => {
     if (!value.trim()) {
-      toast.error("Please enter a search term!"); // Сповіщення про порожнє поле
+      toast.error("Please enter a search term!");
       return;
     }
     setSearchParams({ query: value });

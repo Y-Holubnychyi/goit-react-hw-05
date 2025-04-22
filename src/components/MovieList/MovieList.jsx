@@ -1,28 +1,28 @@
 import { Link, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import { MdMovie } from "react-icons/md";
-import css from "./MovieList.module.css";
+import s from "./MovieList.module.css";
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
 
   return (
-    <ul className={css.list}>
+    <ul className={s.list}>
       {movies.map(({ id, title, name, poster_path }) => (
-        <li key={id} className={css.item}>
-          <Link to={`/movies/${id}`} state={location} className={css.link}>
-            <div className={css.imageWrapper}>
+        <li key={id} className={s.item}>
+          <Link to={`/movies/${id}`} state={location} className={s.link}>
+            <div className={s.imageWrapper}>
               {poster_path ? (
                 <img
                   src={`https://image.tmdb.org/t/p/w300${poster_path}`}
                   alt={title || name}
-                  className={css.image}
+                  className={s.image}
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}
                 />
               ) : (
-                <div className={css.iconContainer}>
+                <div className={s.iconContainer}>
                   <MdMovie size={100} color="#ccc" />
                 </div>
               )}

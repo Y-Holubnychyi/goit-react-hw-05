@@ -4,7 +4,7 @@ import { fetchMovieDetails } from "../../api/api";
 import Loader from "../../components/Loader/Loader";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import DEFAULT_IMG from "../../api/defImg";
-import css from "./MovieDetailsPage.module.css";
+import s from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -37,7 +37,7 @@ const MovieDetailsPage = () => {
 
   return (
     <main>
-      <Link to={backLink.current} className={css.backLink}>
+      <Link to={backLink.current} className={s.backLink}>
         Go back
       </Link>
 
@@ -45,7 +45,7 @@ const MovieDetailsPage = () => {
       {error && <ErrorMessage />}
 
       {movie && (
-        <div className={css.details}>
+        <div className={s.details}>
           <img
             src={
               movie.poster_path
@@ -66,7 +66,7 @@ const MovieDetailsPage = () => {
         </div>
       )}
 
-      <div className={css.additional}>
+      <div className={s.additional}>
         <p>Additional information:</p>
         <ul>
           <li>

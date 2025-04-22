@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchMovieReviews } from "../../api/api";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
-import css from "./MovieReviews.module.css";
+import s from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
@@ -32,13 +32,13 @@ const MovieReviews = () => {
   }, [movieId]);
 
   return (
-    <div className={css.reviewsBlock}>
+    <div className={s.reviewsBlock}>
       {loading && <Loader />}
       {error && <ErrorMessage />}
       {reviews.length > 0 ? (
-        <ul className={css.list}>
+        <ul className={s.list}>
           {reviews.map(({ id, author, content }) => (
-            <li key={id} className={css.item}>
+            <li key={id} className={s.item}>
               <h4>Author: {author}</h4>
               <p>{content}</p>
             </li>

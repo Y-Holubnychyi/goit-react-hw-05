@@ -4,7 +4,7 @@ import { fetchMovieCredits } from "../../api/api";
 import Loader from "../Loader/Loader";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import DEFAULT_IMG from "../../api/defImg";
-import css from "./MovieCast.module.css";
+import s from "./MovieCast.module.css";
 
 const MovieCast = () => {
   const { movieId } = useParams();
@@ -33,13 +33,13 @@ const MovieCast = () => {
   }, [movieId]);
 
   return (
-    <div className={css.castBlock}>
+    <div className={s.castBlock}>
       {loading && <Loader />}
       {error && <ErrorMessage />}
       {cast.length > 0 ? (
-        <ul className={css.list}>
+        <ul className={s.list}>
           {cast.map(({ id, profile_path, name, character }) => (
-            <li key={id} className={css.item}>
+            <li key={id} className={s.item}>
               <img
                 src={
                   profile_path
